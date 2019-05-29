@@ -80,7 +80,7 @@ void	check_all(char *arr)
 	tmp = NULL;
 	check_tetri_count(count_tetri(arr));
 	add21 = 0;
-	while (arr[add21] != '\0')
+	while (arr[add21 - 1] == '\n' || add21 == 0)
 	{
 		if (!(tmp = ft_strsub(arr, add21, 20)))
 			exit_error();

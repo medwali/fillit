@@ -6,7 +6,7 @@
 /*   By: mel-idri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/12 08:52:40 by mel-idri          #+#    #+#             */
-/*   Updated: 2019/05/28 12:48:38 by mel-idri         ###   ########.fr       */
+/*   Updated: 2019/05/27 02:34:59 by mel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ void	draw_solution(t_tetrimino *tetrimino, int square_size, int tetrim_count)
 	char	*result;
 	int		i;
 	int		j;
+	int		len;
 
-	result = ft_strnew(square_size * square_size + square_size);
-	ft_memset((void*)result, '.', square_size * square_size + square_size);
+	len = (square_size * square_size + square_size) - 1;
+	result = ft_strnew(len);
+	ft_memset((void*)result, '.', len);
 	i = 0;
 	while (i < square_size)
 		result[i++ * (square_size + 1) + square_size] = '\n';
@@ -27,14 +29,12 @@ void	draw_solution(t_tetrimino *tetrimino, int square_size, int tetrim_count)
 	while (i < tetrim_count)
 	{
 		j = 0;
-		if (tetrimino[i].is_on_map)
-			while (j < 4)
-			{
-				result[(tetrimino[i].y[j] + tetrimino[i].dy) * (square_size + 1)
-						+ tetrimino[i].x[j]
-						+ tetrimino[i].dx] = tetrimino[i].c;
-				j++;
-			}
+		while (j < 4)
+		{
+			result[(tetrimino[i].y[j] + tetrimino[i].dy) * (square_size + 1)						+ tetrimino[i].x[j] + tetrimino[i].dx]
+				= tetrimino[i].c;
+			j++;
+		}
 		i++;
 	}
 	ft_putstr(result);

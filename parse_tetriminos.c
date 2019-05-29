@@ -34,18 +34,19 @@ void		remove_top_left_padding(t_tetrimino *tetrimino)
 
 void		parse_tags_coordinates(t_tetrimino *tetrimino, char *buff)
 {
-	char	*offset;
-	char	*search_start;
-	int		i;
+	int i;
+	int j;
 
 	i = 0;
-	search_start = buff;
-	while (i < 4)
+	j = 0;
+	while (i <= 19 && j < 4)
 	{
-		offset = ft_strchr(search_start, '#');
-		tetrimino->x[i] = (offset - buff) % 5;
-		tetrimino->y[i] = (offset - buff) / 5;
-		search_start = offset + 1;
+		if (buff[i] == '#')
+		{
+			tetrimino->x[j] = i % 5;
+			tetrimino->y[j] = i / 5;
+			j++;
+		}
 		i++;
 	}
 }

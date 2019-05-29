@@ -6,7 +6,7 @@
 #    By: oelazzou <oelazzou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/23 21:40:48 by oelazzou          #+#    #+#              #
-#    Updated: 2019/05/28 12:54:40 by mel-idri         ###   ########.fr        #
+#    Updated: 2019/05/28 02:03:34 by mel-idri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,11 +29,12 @@ $(NAME): $(OBJ)
 	make -C libft re
 	$(CC) $(FLAGS) $(OBJ) -L libft -lft -o $(NAME)
 $(OBJ): $(SRC)
+	make -C libft re
 	$(CC) $(FLAGS) -c $(SRC)
 clean:
 	make -C libft clean
 	rm -f $(OBJ)
-fclean: clean
+fclean:
 	make -C libft fclean
-	rm -f $(NAME) 
+	rm -f $(NAME) $(OBJ)
 re: fclean all
