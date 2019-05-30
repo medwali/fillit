@@ -6,7 +6,7 @@
 /*   By: mel-idri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/11 18:31:49 by mel-idri          #+#    #+#             */
-/*   Updated: 2019/05/30 07:28:13 by mel-idri         ###   ########.fr       */
+/*   Updated: 2019/05/30 07:31:14 by mel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,10 +114,10 @@ int					solve_puzzle(t_tetrimino *tetrimns_array
 	{
 		i = 0;
 		if (!(g_map = (char **)ft_memalloc(g_square_size * sizeof(char *))))
-			return (-1);
+			exit_error();
 		while (i < g_square_size)
 			if (!(g_map[i++] = (char *)ft_memalloc(g_square_size)))
-				return (-1);
+				exit_error();
 		if (solve_tetrimino(0) == 1)
 			break ;
 		i = 0;
