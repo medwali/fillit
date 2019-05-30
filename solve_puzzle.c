@@ -6,7 +6,7 @@
 /*   By: mel-idri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/11 18:31:49 by mel-idri          #+#    #+#             */
-/*   Updated: 2019/05/28 02:18:06 by mel-idri         ###   ########.fr       */
+/*   Updated: 2019/05/30 07:28:13 by mel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_tetrimino *g_tetrimns;
 int			g_count;
 int			g_square_size;
-char			**g_map;
+char		**g_map;
 
 void				remove_tetrimino(int index)
 {
@@ -24,7 +24,7 @@ void				remove_tetrimino(int index)
 	i = 0;
 	while (i < 4)
 	{
-		g_map[(g_tetrimns[index].y[i] + g_tetrimns[index].dy) ]
+		g_map[(g_tetrimns[index].y[i] + g_tetrimns[index].dy)]
 			[g_tetrimns[index].x[i] + g_tetrimns[index].dx] = 0;
 		++i;
 	}
@@ -41,12 +41,12 @@ int					move_tetrimino(int index)
 				<= g_square_size)
 		{
 			i = 0;
-			while (i < 4 && g_map[(g_tetrimns[index].y[i] + g_tetrimns[index].dy)
-			][ g_tetrimns[index].x[i] + g_tetrimns[index].dx] == 0)
+			while (i < 4 && g_map[(g_tetrimns[index].y[i] +
+	g_tetrimns[index].dy)][g_tetrimns[index].x[i] + g_tetrimns[index].dx] == 0)
 				++i;
 			if (--i == 3)
-				while (i >= 0
-						&& (g_map[(g_tetrimns[index].y[i] + g_tetrimns[index].dy)]
+				while (i >= 0 &&
+						(g_map[(g_tetrimns[index].y[i] + g_tetrimns[index].dy)]
 						[g_tetrimns[index].x[i] + g_tetrimns[index].dx] = '1'))
 					--i;
 			else
@@ -67,15 +67,17 @@ int					put_tetrimino(int index)
 	while (++g_tetrimns[index].dy + g_tetrimns[index].height <= g_square_size)
 	{
 		g_tetrimns[index].dx = -1;
-		while (++g_tetrimns[index].dx + g_tetrimns[index].width <= g_square_size)
+		while (++g_tetrimns[index].dx +
+				g_tetrimns[index].width <= g_square_size)
 		{
 			i = 0;
-			while (i < 4 && g_map[(g_tetrimns[index].y[i] + g_tetrimns[index].dy)
-			][ g_tetrimns[index].x[i] + g_tetrimns[index].dx] == 0)
+			while (i < 4 && g_map
+					[(g_tetrimns[index].y[i] + g_tetrimns[index].dy)]
+					[g_tetrimns[index].x[i] + g_tetrimns[index].dx] == 0)
 				++i;
 			if (--i == 3)
 				while (i >= 0 && (g_map[(g_tetrimns[index].y[i]
-					+ g_tetrimns[index].dy) ][ g_tetrimns[index].x[i]
+					+ g_tetrimns[index].dy)][g_tetrimns[index].x[i]
 					+ g_tetrimns[index].dx] = '1'))
 					--i;
 			else
@@ -86,7 +88,7 @@ int					put_tetrimino(int index)
 	return (0);
 }
 
-int 				solve_tetrimino(int index)
+int					solve_tetrimino(int index)
 {
 	int ret;
 
@@ -111,10 +113,10 @@ int					solve_puzzle(t_tetrimino *tetrimns_array
 	while (1)
 	{
 		i = 0;
-		if(!(g_map = (char **)ft_memalloc(g_square_size * sizeof(char *))))
+		if (!(g_map = (char **)ft_memalloc(g_square_size * sizeof(char *))))
 			return (-1);
 		while (i < g_square_size)
-			if(!(g_map[i++] = (char *)ft_memalloc(g_square_size)))
+			if (!(g_map[i++] = (char *)ft_memalloc(g_square_size)))
 				return (-1);
 		if (solve_tetrimino(0) == 1)
 			break ;

@@ -6,19 +6,18 @@
 /*   By: oelazzou <oelazzou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/26 15:12:01 by oelazzou          #+#    #+#             */
-/*   Updated: 2019/05/27 06:02:15 by mel-idri         ###   ########.fr       */
+/*   Updated: 2019/05/30 06:38:03 by mel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FILLIT_H
-#define FILLIT_H
+# define FILLIT_H
 
-#include <stdio.h>
-#include <unistd.h>
-#include "libft/libft.h"
-#include <fcntl.h>
-#include <sys/types.h>
-#include <sys/stat.h>
+# include <unistd.h>
+# include "libft/libft.h"
+# include <fcntl.h>
+# include <sys/types.h>
+# include <sys/stat.h>
 
 int				ft_sqrt(int n);
 char			*read_file(int fd);
