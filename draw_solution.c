@@ -6,7 +6,7 @@
 /*   By: mel-idri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/12 08:52:40 by mel-idri          #+#    #+#             */
-/*   Updated: 2019/05/31 04:56:56 by mel-idri         ###   ########.fr       */
+/*   Updated: 2019/05/31 06:12:07 by mel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,5 @@ void	draw_solution(t_tetrimino *tetrimino, int square_size, int tetrim_count)
 		i++;
 	}
 	ft_putstr(result);
+	ft_strdel(&result);
 }
