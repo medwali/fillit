@@ -6,7 +6,7 @@
 /*   By: mel-idri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/12 08:52:40 by mel-idri          #+#    #+#             */
-/*   Updated: 2019/05/27 02:34:59 by mel-idri         ###   ########.fr       */
+/*   Updated: 2019/05/30 06:37:07 by mel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	draw_solution(t_tetrimino *tetrimino, int square_size, int tetrim_count)
 		j = 0;
 		while (j < 4)
 		{
-			result[(tetrimino[i].y[j] + tetrimino[i].dy) * (square_size + 1)						+ tetrimino[i].x[j] + tetrimino[i].dx]
-				= tetrimino[i].c;
+			result[(tetrimino[i].y[j] + tetrimino[i].dy) * (square_size + 1)
+					+ tetrimino[i].x[j] + tetrimino[i].dx] = tetrimino[i].c;
 			j++;
 		}
 		i++;
