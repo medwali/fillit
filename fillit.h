@@ -51,4 +51,5 @@ void			remove_top_left_padding(t_tetrimino *tetrimino);
 int				ft_sqrt_ciel(int area);
 int				solve_puzzle(t_tetrimino *tetrimns_array
 					, int tetrimns_count);
+int                             solve_tetrimino(int index);
 #endif

@@ -47,7 +47,7 @@ int					move_tetrimino(int index)
 			if (--i == 3)
 				while (i >= 0
 						&& (g_map[(g_tetrimns[index].y[i] + g_tetrimns[index].dy)]
-						[g_tetrimns[index].x[i] + g_tetrimns[index].dx] = '1'))
+						[g_tetrimns[index].x[i] + g_tetrimns[index].dx] = 1))
 					--i;
 			else
 				continue ;
@@ -76,7 +76,7 @@ int					put_tetrimino(int index)
 			if (--i == 3)
 				while (i >= 0 && (g_map[(g_tetrimns[index].y[i]
 					+ g_tetrimns[index].dy) ][ g_tetrimns[index].x[i]
-					+ g_tetrimns[index].dx] = '1'))
+					+ g_tetrimns[index].dx] = 1))
 					--i;
 			else
 				continue ;
@@ -108,14 +108,14 @@ int					solve_puzzle(t_tetrimino *tetrimns_array
 	g_tetrimns = tetrimns_array;
 	g_count = tetrimns_count;
 	g_square_size = ft_sqrt_ciel(g_count * 4);
-	while (1)
+	while (g_square_size <= 11)
 	{
 		i = 0;
 		if(!(g_map = (char **)ft_memalloc(g_square_size * sizeof(char *))))
-			return (-1);
+			exit_error();
 		while (i < g_square_size)
-			if(!(g_map[i++] = (char *)ft_memalloc(g_square_size)))
-				return (-1);
+			if(!(g_map[i++] = (char *)ft_strnew(g_square_size)))
+				exit_error();
 		if (solve_tetrimino(0) == 1)
 			break ;
 		i = 0;
@@ -126,3 +126,4 @@ int					solve_puzzle(t_tetrimino *tetrimns_array
 	}
 	return (g_square_size);
 }
+

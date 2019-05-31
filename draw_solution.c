@@ -20,7 +20,8 @@ void	draw_solution(t_tetrimino *tetrimino, int square_size, int tetrim_count)
 	int		len;
 
 	len = (square_size * square_size + square_size) - 1;
-	result = ft_strnew(len);
+	if(!(result = ft_strnew(len)))
+		exit_error();
 	ft_memset((void*)result, '.', len);
 	i = 0;
 	while (i < square_size)

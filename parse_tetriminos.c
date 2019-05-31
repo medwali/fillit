@@ -64,8 +64,8 @@ void		calc_width_height(t_tetrimino *tetrimino)
 			tetrimino->height = tetrimino->y[i];
 		i++;
 	}
-	tetrimino->width++;
 	tetrimino->height++;
+	tetrimino->width++;
 }
 
 t_tetrimino	*parse_tetriminos(char *tetrimns_buff, int count)
