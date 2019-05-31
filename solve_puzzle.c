@@ -45,15 +45,9 @@ int					move_tetrimino(int index)
 	g_tetrimns[index].dy)][g_tetrimns[index].x[i] + g_tetrimns[index].dx] == 0)
 				++i;
 			if (--i == 3)
-<<<<<<< HEAD
 				while (i >= 0
 						&& (g_map[(g_tetrimns[index].y[i] + g_tetrimns[index].dy)]
 						[g_tetrimns[index].x[i] + g_tetrimns[index].dx] = 1))
-=======
-				while (i >= 0 &&
-						(g_map[(g_tetrimns[index].y[i] + g_tetrimns[index].dy)]
-						[g_tetrimns[index].x[i] + g_tetrimns[index].dx] = '1'))
->>>>>>> 963b74dcfe646ba34e082a89d4a504a7be1a7825
 					--i;
 			else
 				continue ;
@@ -83,13 +77,8 @@ int					put_tetrimino(int index)
 				++i;
 			if (--i == 3)
 				while (i >= 0 && (g_map[(g_tetrimns[index].y[i]
-<<<<<<< HEAD
 					+ g_tetrimns[index].dy) ][ g_tetrimns[index].x[i]
 					+ g_tetrimns[index].dx] = 1))
-=======
-					+ g_tetrimns[index].dy)][g_tetrimns[index].x[i]
-					+ g_tetrimns[index].dx] = '1'))
->>>>>>> 963b74dcfe646ba34e082a89d4a504a7be1a7825
 					--i;
 			else
 				continue ;
@@ -124,17 +113,10 @@ int					solve_puzzle(t_tetrimino *tetrimns_array
 	while (g_square_size <= 11)
 	{
 		i = 0;
-<<<<<<< HEAD
 		if(!(g_map = (char **)ft_memalloc(g_square_size * sizeof(char *))))
 			exit_error();
 		while (i < g_square_size)
 			if(!(g_map[i++] = (char *)ft_strnew(g_square_size)))
-=======
-		if (!(g_map = (char **)ft_memalloc(g_square_size * sizeof(char *))))
-			exit_error();
-		while (i < g_square_size)
-			if (!(g_map[i++] = (char *)ft_memalloc(g_square_size)))
->>>>>>> 963b74dcfe646ba34e082a89d4a504a7be1a7825
 				exit_error();
 		if (solve_tetrimino(0) == 1)
 			break ;
