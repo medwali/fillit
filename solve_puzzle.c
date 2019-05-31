@@ -6,7 +6,7 @@
 /*   By: mel-idri <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/11 18:31:49 by mel-idri          #+#    #+#             */
-/*   Updated: 2019/05/30 07:31:14 by mel-idri         ###   ########.fr       */
+/*   Updated: 2019/05/31 05:08:19 by mel-idri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int					move_tetrimino(int index)
 	g_tetrimns[index].dy)][g_tetrimns[index].x[i] + g_tetrimns[index].dx] == 0)
 				++i;
 			if (--i == 3)
-				while (i >= 0
-						&& (g_map[(g_tetrimns[index].y[i] + g_tetrimns[index].dy)]
+				while (i >= 0 &&
+						(g_map[(g_tetrimns[index].y[i] + g_tetrimns[index].dy)]
 						[g_tetrimns[index].x[i] + g_tetrimns[index].dx] = 1))
 					--i;
 			else
@@ -77,7 +77,7 @@ int					put_tetrimino(int index)
 				++i;
 			if (--i == 3)
 				while (i >= 0 && (g_map[(g_tetrimns[index].y[i]
-					+ g_tetrimns[index].dy) ][ g_tetrimns[index].x[i]
+					+ g_tetrimns[index].dy)][g_tetrimns[index].x[i]
 					+ g_tetrimns[index].dx] = 1))
 					--i;
 			else
@@ -110,13 +110,13 @@ int					solve_puzzle(t_tetrimino *tetrimns_array
 	g_tetrimns = tetrimns_array;
 	g_count = tetrimns_count;
 	g_square_size = ft_sqrt_ciel(g_count * 4);
-	while (g_square_size <= 11)
+	while (1)
 	{
 		i = 0;
-		if(!(g_map = (char **)ft_memalloc(g_square_size * sizeof(char *))))
+		if (!(g_map = (char **)ft_memalloc(g_square_size * sizeof(char *))))
 			exit_error();
 		while (i < g_square_size)
-			if(!(g_map[i++] = (char *)ft_strnew(g_square_size)))
+			if (!(g_map[i++] = (char *)ft_strnew(g_square_size)))
 				exit_error();
 		if (solve_tetrimino(0) == 1)
 			break ;
@@ -128,4 +128,3 @@ int					solve_puzzle(t_tetrimino *tetrimns_array
 	}
 	return (g_square_size);
 }
-
