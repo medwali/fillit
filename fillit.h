@@ -6,7 +6,7 @@
 /*   By: oelazzou <oelazzou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/26 15:12:01 by oelazzou          #+#    #+#             */
-/*   Updated: 2019/05/30 06:38:03 by mel-idri         ###   ########.fr       */
+/*   Updated: 2019/06/13 15:45:59 by oelazzou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,5 @@ void			remove_top_left_padding(t_tetrimino *tetrimino);
 int				ft_sqrt_ciel(int area);
 int				solve_puzzle(t_tetrimino *tetrimns_array
 					, int tetrimns_count);
-int                             solve_tetrimino(int index);
+int				solve_tetrimino(int index);
 #endif
