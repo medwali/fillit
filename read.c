@@ -6,7 +6,7 @@
 /*   By: oelazzou <oelazzou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/27 14:50:55 by oelazzou          #+#    #+#             */
-/*   Updated: 2019/05/25 23:52:08 by mel-idri         ###   ########.fr       */
+/*   Updated: 2019/06/15 22:31:37 by oelazzou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ char	*read_file(int fd)
 	i = read(fd, &c, 1);
 	if (i == 1)
 	{
-		while (i == 1)
+		while (i == 1 && j < 547)
 		{
 			tmp[j] = c;
 			is_invalid_char(tmp[j]);
